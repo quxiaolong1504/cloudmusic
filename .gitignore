@@ -64,3 +64,4 @@ my_settings.py
 *.sock
 *.ini
 .idea
+local.py
