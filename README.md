@@ -34,3 +34,4 @@ Cloud Music
   
 #联系我
 邮箱：quxl@snbway.com
+博客：[http://quxl.snbway.net/](http://quxl.snbway.net/)
