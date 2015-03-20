@@ -3,8 +3,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'cloudmusic',
-        'USER': 'quxl',
-        'PASSWORD': 'quxl',
+        'USER': 'root',
+        'PASSWORD': 'qxlaylj',
         'HOST': 'localhost',
         'PORT': '3306',
         'OPTIONS':{
