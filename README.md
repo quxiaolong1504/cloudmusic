@@ -1,7 +1,7 @@
 Cloud Music
 ===================================
-  项目主页：[http://baidu.com](http://baidu.com)<br/>
-  文档地址：[https://api.cloudmusic.com](api.cloudmusic.com)
+  项目主页：[http://www.snbway.com](http://baidu.com)<br/>
+  文档地址：[https://api.snbway.com](api.cloudmusic.com)
 
   
 云音乐是模仿网易云音乐的一个项目
