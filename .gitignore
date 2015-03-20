@@ -52,3 +52,15 @@ docs/_build/
 
 # PyBuilder
 target/
+
+.DS_Store
+log/*.log
+.project
+.pydevproject
+*.pyc
+.gitignore
+my_settings.py
+*.pid
+*.sock
+*.ini
+.idea
