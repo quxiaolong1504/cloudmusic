@@ -1,10 +1,9 @@
 from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from rest_framework.routers import DefaultRouter
 from account.views import UserRegView, AccountsView
 from cmmedia.views import ImageViewSet
-
+from utils.routers import DefaultRouter
 
 router = DefaultRouter()
 router.register('images',ImageViewSet)
