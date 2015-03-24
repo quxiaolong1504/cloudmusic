@@ -3,6 +3,7 @@ import logging
 from django.contrib.auth.models import User
 from rest_framework import serializers
 from account.models import UserProfile
+from cmmedia.models import Image
 from cmmedia.serializers import ImageSerializer
 
 log = logging.getLogger('root')
@@ -45,10 +46,20 @@ class UserProfileSerializer(serializers.ModelSerializer):
         :return: UserProfile instance
         """
         hp = validated_data.pop('head_photo')
-        profile = super(UserProfileSerializer,self).update(instance,validated_data)
+        profile = super(UserProfileSerializer, self).update(instance, validated_data)
+        self.update_or_create_head_photo(profile, hp)
+        return profile
 
+
+    def update_or_create_head_photo(self, profile, hp):
         head_photo = profile.head_photo
-        head_photo.file = hp['file']
-        head_photo.save()
+        if not head_photo:
+            head_photo = Image(file=hp['file'])
+            head_photo.save()
+            profile.head_photo = head_photo
+            profile.save()
+        else:
+            head_photo.file = hp['file']
+            head_photo.save()
         return profile
 
