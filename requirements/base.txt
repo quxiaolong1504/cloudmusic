@@ -1,6 +1,7 @@
 Django==1.7.7
 Markdown==2.6.1
 MySQL-python==1.2.5
+Pillow==2.7.0
 django-braces==1.4.0
 django-filter==0.9.2
 django-guardian==1.2.5
