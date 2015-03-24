@@ -140,6 +140,9 @@ REST_FRAMEWORK = {
 
 # Media file root
 MEDIA_ROOT = ""
+
 MEDIA_URL="/smedia/"
 
 MEDIA_USER_HEAD_PHOTO = "head_photos"
+
+AUTH_PROFILE_MODULE = "account.UserProfile"

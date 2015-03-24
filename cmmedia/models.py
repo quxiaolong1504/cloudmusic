@@ -11,4 +11,4 @@ class Image(models.Model):
     """
     cloud 图片资源
     """
-    file = models.ImageField(upload_to=UploadTo(upload_to=settings.MEDIA_USER_HEAD_PHOTO),max_length=1024*10)
+    file = models.ImageField(max_length=1024*10)
