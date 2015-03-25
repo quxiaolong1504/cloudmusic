@@ -17,7 +17,7 @@ urlpatterns += patterns('accounts',
                         url(r'^accounts/profile/$', AccountsView.as_view(), name='accounts-profile'),
                         url(r'^accounts/reg/$', UserRegView.as_view(), name='accounts-reg'),
                         url(r'^accounts/tags/$', TagViewSet.as_view({'get':'list','post':'create'}), name='accounts-tag-list'),
-                        url(r'^accounts/tags/(?P<pk>\d+)/$', TagViewSet.as_view({'get':'retrieve','put':'update','patch':'partial_update','delete':'destroy'}), name='accounts-tag-detail'),
+                        url(r'^accounts/tags/(?P<pk>\d+)/$', TagViewSet.as_view({'get':'retrieve','put':'update','patch':'partial_update','delete':'destroy'}), name='tag-detail'),
 )
 
 urlpatterns += patterns('resources',
