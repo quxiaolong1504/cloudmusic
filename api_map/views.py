@@ -14,6 +14,9 @@ def api_root(request, format=None):
     return {
         _(u"accounts_url").strip(): reverse('accounts', request=request, format=format),
         _(u"resources_url").strip(): reverse('resources', request=request, format=format),
+        # _(u"artists_url").strip(): reverse('artists-list', request=request, format=format),
+        # _(u"albums_url").strip(): reverse('albums-list', request=request, format=format),
+        # _(u"musics_url").strip(): reverse('musics-list', request=request, format=format),
         }
 
 @api_view(('GET',))

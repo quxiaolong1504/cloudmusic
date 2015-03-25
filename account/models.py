@@ -4,6 +4,7 @@ from django.db import models
 
 # Create your models here.
 from cmmedia.models import Image
+from utils import choices
 
 
 class UserProfile(models.Model):
@@ -12,7 +13,7 @@ class UserProfile(models.Model):
     """
     user = models.OneToOneField(User)
     gender = models.CharField(max_length=10,help_text=u'性别',
-                              choices=(('male', 'male'), ('female', 'female')), default='',)
+                              choices=choices.GENDER, default='',)
     first_name = models.CharField(max_length=20,help_text=u'昵称', default='')
     introduction = models.CharField(max_length=140,help_text=u'介绍')
     birthday = models.DateField(blank=True,null=True,help_text=u'生日')
