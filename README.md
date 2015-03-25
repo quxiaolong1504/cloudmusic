@@ -1,7 +1,7 @@
 Cloud Music
 ===================================
-  项目主页：[http://www.snbway.com](www.snbway.com)<br/>
-  文档地址：[https://api.snbway.com](api.snbway.com)
+  项目主页：[http://www.snbway.com](http://www.snbway.com)<br/>
+  文档地址：[https://api.snbway.com](https://api.snbway.com)
 
   
 云音乐是模仿网易云音乐的一个项目
