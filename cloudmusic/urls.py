@@ -4,6 +4,7 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from account.views import UserRegView, AccountsView, AccountURLView
 from api_map.views import get_api_root
 from cmmedia.views import ResourceURLView, ImageView, ArtistViewSet, AlbumViewSet, MusicViewSet
+from musiclist.views import TagViewSet, MusicListViewSet
 
 
 urlpatterns = patterns('',
@@ -15,6 +16,8 @@ urlpatterns += patterns('accounts',
                         url(r'^accounts/$', AccountURLView.as_view(), name="accounts"),
                         url(r'^accounts/profile/$', AccountsView.as_view(), name='accounts-profile'),
                         url(r'^accounts/reg/$', UserRegView.as_view(), name='accounts-reg'),
+                        url(r'^accounts/tags/$', TagViewSet.as_view({'get':'list','post':'create'}), name='accounts-tag-list'),
+                        url(r'^accounts/tags/(?P<pk>\d+)/$', TagViewSet.as_view({'get':'retrieve','put':'update','patch':'partial_update','delete':'destroy'}), name='accounts-tag-detail'),
 )
 
 urlpatterns += patterns('resources',
@@ -26,9 +29,11 @@ urlpatterns += patterns('resources',
                         url(r'^resources/artists/(?P<pk>\d+)/$',ArtistViewSet.as_view({'get':'retrieve','put':'update','patch':'partial_update','delete':'destroy'}), name="artists-detail"),
                         url(r'^resources/musics/$',MusicViewSet.as_view({'get':'list','post':'create'}), name="musics-list"),
                         url(r'^resources/musics/(?P<pk>\d+)/$',MusicViewSet.as_view({'get':'retrieve','put':'update','patch':'partial_update','delete':'destroy'}), name="musics-detail"),
-
 )
-
+urlpatterns += patterns('musiclists',
+                        url(r'^muscilist/$',MusicListViewSet.as_view({'get':'list','post':'create'}),name='musiclist'),
+                        url(r'^muscilist/(?P<pk>\d+)/$',MusicListViewSet.as_view({'get':'retrieve','put':'update','patch':'partial_update','delete':'destroy'}),name='musiclist-detail'),
+                        )
 
 urlpatterns += format_suffix_patterns(urlpatterns)
 

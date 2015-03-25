@@ -28,6 +28,7 @@ class AccountURLView(APIView):
         _(u"login_url").strip(): reverse('rest_framework:login', request=self.request, format=format),
         _(u"logout_url").strip(): reverse('rest_framework:logout', request=self.request, format=format),
         _(u"register_url").strip(): reverse('accounts-reg', request=self.request, format=format),
+        _(u"tag_url").strip(): reverse('accounts-tag-list', request=self.request, format=format),
         }
 
 
