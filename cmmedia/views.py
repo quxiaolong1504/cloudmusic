@@ -16,7 +16,7 @@ class ResourceURLView(APIView):
         return Response(self.get_url_dispach())
     def get_url_dispach(self,format=None):
          return {
-        _(u"images").strip(): reverse('resource_image', request=self.request, format=format,),
+        _(u"images_url").strip(): reverse('resource_image', request=self.request, format=format,),
         }
 
 
