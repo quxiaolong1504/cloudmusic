@@ -17,6 +17,8 @@ class Tag(models.Model):
     def __str__(self):
         return self.name
 
+def limit_choices_owner_tag():
+        return {"id":1}
 
 class MusicList(models.Model):
     """
@@ -26,6 +28,8 @@ class MusicList(models.Model):
     user = models.ForeignKey(User, related_name='music_lists', help_text=u"歌单用者")
     create_at = models.DateTimeField(auto_now_add=True, help_text=u'创建时间')
     listen_count = models.IntegerField(default=0, help_text=u'收听数')
-    tags = models.ManyToManyField(Tag, related_name='music_lists', help_text=u'标签列表',limit_choices_to={'pk__is':1} )
+    tags = models.ManyToManyField(Tag, related_name='music_lists', help_text=u'标签列表',)
     introduction = models.CharField(max_length=200, help_text=u'歌单简介')
     thumbnail = models.ImageField(upload_to='musiclists/thumbnail',help_text=u'歌单缩略图',default=None)
+
+

@@ -1,14 +1,18 @@
 # encoding:utf-8
+import sys,logging
+
 from rest_framework import serializers
 from musiclist.models import Tag, MusicList
-import sys
+
+log = logging.getLogger('root')
+
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
 __author__ = 'quxl'
 
 
-class TagSerializers(serializers.ModelSerializer):
+class TagSerializers(serializers.HyperlinkedModelSerializer):
     """
     标签 序列化器
 
@@ -16,7 +20,7 @@ class TagSerializers(serializers.ModelSerializer):
 
     class Meta:
         model = Tag
-        fields = ('name',)
+        fields = ('url','name',)
 
 
 class MusicListSerializers(serializers.HyperlinkedModelSerializer):

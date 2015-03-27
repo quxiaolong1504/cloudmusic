@@ -1,8 +1,11 @@
 # encoding:utf-8
-from rest_framework.viewsets import ModelViewSet
+import logging
 from rest_framework import permissions
+from rest_framework.viewsets import ModelViewSet
 from musiclist.models import Tag, MusicList
 from musiclist.serializers import TagSerializers, MusicListSerializers
+
+log = logging.getLogger('root')
 
 
 class TagViewSet(ModelViewSet):
@@ -29,3 +32,4 @@ class MusicListViewSet(ModelViewSet):
     serializer_class = MusicListSerializers
     permission_classes = [permissions.IsAuthenticated]
     lookup_field = u'pk'
+
