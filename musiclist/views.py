@@ -33,3 +33,11 @@ class MusicListViewSet(ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
     lookup_field = u'pk'
 
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+    def get_queryset(self):
+        musicl_list = super(MusicListViewSet,self).get_queryset()
+        return musicl_list.filter(user=self.request.user)
+
+
