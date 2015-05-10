@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.conf.urls import patterns, include, url
+from django.views.generic.base import RedirectView
 from rest_framework.urlpatterns import format_suffix_patterns
 from account.views import UserRegView, AccountsView, AccountURLView
 from api_map.views import get_api_root
@@ -9,6 +10,7 @@ from musiclist.views import TagViewSet, MusicListViewSet
 
 urlpatterns = patterns('',
                        (r'^smedia/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
+                       url(r'^favicon\.ico$',RedirectView.as_view(url='/static/images/favicon.ico')),
 )
 
 urlpatterns += patterns('accounts',
